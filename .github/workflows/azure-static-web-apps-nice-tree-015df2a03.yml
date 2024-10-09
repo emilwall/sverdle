@@ -14,6 +14,9 @@ jobs:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
     runs-on: ubuntu-latest
     name: Build and Deploy Job
+    env:
+      # workaround for Oryx issue: see https://github.com/Azure/static-web-apps/issues/909#issuecomment-1320077142
+      CUSTOM_BUILD_COMMAND: 'chown -R root:root . && npm install --unsafe-perm && npm run build'
     steps:
       - uses: actions/checkout@v3
         with:
@@ -29,7 +32,7 @@ jobs:
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
           app_location: "/" # App source code path
-          api_location: "build/server" # Api source code path - optional
+          api_location: "func" # Api source code path - optional
           output_location: "build" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
 
