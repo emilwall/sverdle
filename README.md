@@ -1,3 +1,5 @@
+[![Azure Static Web Apps CI/CD](https://github.com/emilwall/sverdle/actions/workflows/azure-static-web-apps-nice-tree-015df2a03.yml/badge.svg)](https://github.com/emilwall/sverdle/actions/workflows/azure-static-web-apps-nice-tree-015df2a03.yml)
+
 # create-svelte
 
 Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
